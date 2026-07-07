@@ -2,7 +2,7 @@
 
 > Make your work queryable by AI agents
 
-An MCP (Model Context Protocol) server that lets AI agents — Claude Desktop, Claude.ai, Cursor, Amp — answer questions about your work, projects, and experience. Built with Python, FastAPI, and deployed to the web for zero-friction access.
+An MCP (Model Context Protocol) server that lets AI agents — Claude Desktop, Claude.ai, Cursor, Amp answer questions about your work, projects, and experience. Built with Python, FastAPI, and deployed to the web for zero-friction access.
 
 ## What It Does
 
@@ -22,8 +22,3 @@ A contributor asks *"how does the authentication flow work?"* Your server return
 **For Consultants:**
 A potential client asks *"have you worked with companies in healthcare?"* Your server pulls from your experience database and case studies.
 
-## Why Build This
-
-- **Direct marketing.** Make your work discoverable in the way people actually want to consume it, through conversation.
-- **Web-accessible from day one.** Deployed with HTTP/SSE transport — anyone connects via a URL, no installs, no repo cloning.
-- **Template for others.** Fork, customize with your content, deploy your own version.
