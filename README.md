@@ -1,24 +1,62 @@
-# askMe - Personal Portfolio MCP Server
+# askGodbless MCP Server
 
-> Make your work queryable by AI agents
+A personal MCP (Model Context Protocol) server for Godbless Umukoro, deployed at `https://askgodbless.fly.dev`. Connect it to Claude to query tools over the web.
 
-An MCP (Model Context Protocol) server that lets AI agents — Claude Desktop, Claude.ai, Cursor, Amp answer questions about your work, projects, and experience. Built with Python, FastAPI, and deployed to the web for zero-friction access.
+## Project Structure
 
-## What It Does
+```
+server/
+├── app.py            # FastAPI app, lifespan, setup page
+├── auth.py           # Bearer token guard
+├── main.py           # uvicorn entry point
+├── oauth/
+│   ├── config.py     # CLIENT_ID, allowed redirect origins
+│   ├── store.py      # in-memory token/code stores
+│   └── routes.py     # OAuth 2.0 + PKCE endpoints
+└── mcp/
+    ├── tools.py      # MCP tool definitions (add new tools here)
+    └── transport.py  # Streamable HTTP session manager + /mcp route
 
-Turn your portfolio into a live API for AI agents. Instead of making people read your resume or browse GitHub, let them ask questions in natural language and get grounded answers from your actual work.
+client/
+└── test_client.py    # MCP test client
+```
 
-## Use Cases
+## Stack
 
-**For Job Seekers:**
-A recruiter adds your URL to Claude.ai and asks *"does this candidate have Kubernetes experience?"* Claude calls your tools, finds relevant projects, and gives a grounded answer with links. No GitHub browsing required.
+- **Python 3.12**
+- **FastAPI** + **uvicorn** — HTTP server
+- **MCP SDK 1.28** — Streamable HTTP transport
+- **OAuth 2.0 + PKCE** — auth for Claude.ai connector
+- **Fly.io** — deployment
+- **Docker** — containerisation
+- **uv** — dependency management
 
-**For Content Creators:**
-A podcast host preparing an interview asks *"what are their most controversial takes?"* Your server searches your blog posts and returns specific articles with context.
+## Connecting from Claude
 
-**For Open Source Maintainers:**
-A contributor asks *"how does the authentication flow work?"* Your server returns architecture docs, code snippets, and relevant implementation details from your project.
+**Claude Desktop or claude.ai:**
+1. Add a custom connector with URL: `https://askgodbless.fly.dev/mcp`
+2. Enter OAuth Client ID: `askgodbless-claude`
+3. Click **Authorize** when the sign-in page appears
 
-**For Consultants:**
-A potential client asks *"have you worked with companies in healthcare?"* Your server pulls from your experience database and case studies.
+## Local Development
 
+```bash
+uv sync
+uvicorn server.app:app --reload --port 8000
+```
+
+## Deploy
+
+```bash
+fly deploy
+```
+
+## Adding Tools
+
+All tools live in `server/mcp/tools.py`. Add a new `@mcp_server.list_tools()` entry and a matching branch in `call_tool`.
+
+## Current Tools
+
+| Tool | Description |
+|------|-------------|
+| `hello` | Returns a greeting for a given name |

@@ -1,0 +1,12 @@
+[project]
+name = "askme"
+version = "0.1.0"
+description = "An MCP server that makes your portfolio queryable by AI agents."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.28.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.34.0",
+]
