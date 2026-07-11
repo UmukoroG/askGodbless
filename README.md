@@ -1,6 +1,6 @@
 # askGodbless MCP Server
 
-A personal MCP (Model Context Protocol) server for Godbless Umukoro, deployed at `https://askgodbless.fly.dev`. Connect it to Claude to query tools over the web.
+A personal MCP (Model Context Protocol) server for Godbless Umukoro, deployed at `https://askgodbless.onrender.com`. Connect it to Claude to query tools over the web.
 
 ## Project Structure
 
