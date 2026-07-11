@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 from .mcp.transport import session_manager
-from .oauth.config import CLIENT_ID
+from .oauth.config import CLIENT_ID, PUBLIC_URL
 from .oauth.routes import router as oauth_router
 from .mcp.transport import router as mcp_router
 
@@ -36,7 +36,7 @@ async def root():
   <h1>askGodbless MCP Server</h1>
   <p>To connect from Claude.ai:</p>
   <ol>
-    <li>Add a custom connector with URL: <code>https://askgodbless.fly.dev/mcp</code></li>
+    <li>Add a custom connector with URL: <code>{PUBLIC_URL}/mcp</code></li>
     <li>When prompted for an OAuth Client ID, enter: <code>{CLIENT_ID}</code></li>
     <li>Click <strong>Authorize</strong> when the sign-in page appears</li>
   </ol>
