@@ -1,0 +1,51 @@
+[kubernetes]
+where = ["Dayforce", "Microservice Ticketing Platform"]
+detail = "Contributed to migrating a monolith to containerized microservices on Docker/Kubernetes at Dayforce, improving deployment isolation and independent service scalability. Orchestrated a 5-service ticketing platform on Kubernetes with event-driven NATS communication."
+
+[docker]
+where = ["Dayforce", "Microservice Ticketing Platform"]
+detail = "Containerized services during the Dayforce monolith-to-microservices migration, and containerized every service in the ticketing platform project with a CI pipeline for automated builds and deploys."
+
+[typescript_nodejs]
+where = ["Dayforce", "WebSocket Load Balancer", "Microservice Ticketing Platform"]
+detail = "Built RESTful APIs in Node.js/TypeScript for real-time HR data access across microservices at Dayforce. Built a Node.js WebSocket load balancer and the ticketing platform's services."
+
+[rest_apis]
+where = ["Dayforce"]
+detail = "Built and maintained RESTful APIs powering real-time data access across HR microservices used by enterprise clients."
+
+[event_driven_architecture]
+where = ["Red River Mutual", "Microservice Ticketing Platform"]
+detail = "Built event-driven workflows and rulesets automating policy processing and claims handling at Red River Mutual, reducing manual intervention for common case types. Implemented NATS-based event-driven communication with idempotent, ordered consumers in the ticketing platform."
+
+[guidewire]
+where = ["Red River Mutual"]
+detail = "Led migration of a policy administration platform from Guidewire v8 to v10 across distributed services, maintaining backward-compatible service contracts and reducing downtime during cutover. Designed and maintained backend integrations processing high volumes of policy and claims transactions."
+
+[oauth2]
+where = ["Dayforce"]
+detail = "Integrated backend systems with third-party platforms using OAuth 2.0 and webhooks to support client implementations and external HR tooling."
+
+[ci_cd]
+where = ["Toronto-Dominion Bank", "Microservice Ticketing Platform"]
+detail = "Designed and maintained CI/CD pipelines at TD Bank that reduced deployment errors by over 25% and accelerated release cycles for internal enterprise services. Wired up automated build/deploy pipelines for a 5-service microservices platform."
+
+[sql_query_optimization]
+where = ["QueryOptiMax"]
+detail = "Built a SQL performance optimizer for IBM DB2 that analyzes query plans and rewrites patterns, cutting execution time on benchmark workloads by ~50%, with a reproducible Python benchmarking harness."
+
+[websockets]
+where = ["WebSocket Load Balancer"]
+detail = "Built a WebSocket load balancer distributing long-lived connections across backend servers via round-robin, with health checks, graceful failover, and a React UI for live observability."
+
+[azure]
+where = ["Toronto-Dominion Bank"]
+detail = "Supported infrastructure tied to enterprise identity systems, improving uptime and maintaining compliance with internal security standards. Azure AI Fundamentals certified (2021)."
+
+[stripe_payments]
+where = ["PromptForge"]
+detail = "Implemented a tiered subscription system with Stripe payment processing, in-app checkout flow, webhook handling, and real-time usage tracking via Prisma ORM."
+
+[monitoring_production_support]
+where = ["Toronto-Dominion Bank"]
+detail = "Monitored production systems and analyzed logs to identify performance bottlenecks and surface security issues ahead of incidents. Provided Tier 2/3 support driving root-cause analysis and long-term remediation."
