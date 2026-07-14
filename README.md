@@ -27,14 +27,14 @@ client/
 - **FastAPI** + **uvicorn** — HTTP server
 - **MCP SDK 1.28** — Streamable HTTP transport
 - **OAuth 2.0 + PKCE** — auth for Claude.ai connector
-- **Fly.io** — deployment
+- **Render** — deployment
 - **Docker** — containerisation
 - **uv** — dependency management
 
 ## Connecting from Claude
 
 **Claude Desktop or claude.ai:**
-1. Add a custom connector with URL: `https://askgodbless.fly.dev/mcp`
+1. Add a custom connector with URL: `https://askgodbless.onrender.com/mcp`
 2. Enter OAuth Client ID: `askgodbless-claude`
 3. Click **Authorize** when the sign-in page appears
 
@@ -47,9 +47,11 @@ uvicorn server.app:app --reload --port 8000
 
 ## Deploy
 
-```bash
-fly deploy
-```
+Push to `main` — Render auto-deploys on every push.
+
+Set these environment variables in the Render dashboard:
+- `MCP_CLIENT_ID` — your OAuth client ID
+- `PUBLIC_URL` — `https://askgodbless.onrender.com`
 
 ## Adding Tools
 
